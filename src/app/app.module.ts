@@ -1,26 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, provideRouter, withComponentInputBinding } from '@angular/router';
+import { CommentListComponent } from './comment-list/comment-list.component';
+
+const appRoutes = [
+  { path: '', component: PostListComponent },
+  { path: 'post/:postId', component: PostComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
     PostListComponent,
-    PostListItemComponent
+    PostListItemComponent,
+    CommentListComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: 'post/:postId', component: PostComponent },
-    ])
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    provideRouter(appRoutes, withComponentInputBinding())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

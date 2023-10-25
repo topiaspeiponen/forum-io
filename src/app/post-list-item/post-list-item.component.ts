@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Post } from '../posts';
+import { Post } from '../types';
 
 @Component({
   selector: 'app-post-list-item',

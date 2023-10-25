@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
-import { posts } from '../posts';
+import { Post } from '../types';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
 })
 export class PostListComponent {
-  postList = posts;
+  posts: Post[] = [];
+  constructor(private apiService: ApiService) {
+    this.apiService.getPosts().subscribe((data) => {
+      this.posts = data;
+    });
+  }
+  
+
 }

@@ -1,4 +1,4 @@
 
-  <ul *ngFor="let post of postList">
-    <app-post-list-item [post]="post"></app-post-list-item>
+  <ul class="flex flex-col gap-4">
+    <app-post-list-item *ngFor="let post of posts" [post]="post"></app-post-list-item>
   </ul>

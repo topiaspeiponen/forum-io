@@ -1,9 +1,18 @@
-<li class="list-none p-4 bg-red-200">
-  <h3> {{ post.title }} </h3>
-  <div class="my-4">
-    {{ post.content }}
+<li
+  class="list-none bg-white shadow-md rounded
+  transition ease-in-out delay-50 hover:-translate-y-0.5 hover:scale-101 hover:bg-gray-200
+  ">
+  <a routerLink="post/{{post.id}}">
+  <div class="px-4 py-2 bg-on-primary rounded-t">
+    <h3> {{ post.title }} </h3>
   </div>
-  <span class="text-sm">
-    Comments: {{ post.comments }}
-  </span>
+  <div class="p-4">
+    <div>
+      {{ post.content }}
+    </div>
+    <span class="text-sm">
+      Comments: {{ post.commentsCount }}
+    </span>
+  </div>
+  </a>
 </li>

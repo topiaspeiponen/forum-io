@@ -1,6 +1,15 @@
-<header class="mx-auto mt-10 p-4 w-base bg-primary">
-  <h1>Forum.io</h1>
+<header
+  class="mx-auto mt-10 mb-5 p-4 w-base bg-black
+  text-on-primary shadow-md rounded flex flex-row">
+  <a routerLink="/">
+    <h1>Forum.io</h1>
+  </a>
+  <span class="ml-auto">
+    <button class="bg-on-primary text-primary text-sm font-bold p-2 rounded">
+      Create new post
+    </button>
+  </span>
 </header>
 <main class="mx-auto w-base bg-secondary">
-  <app-post-list></app-post-list>
+  <router-outlet></router-outlet>
 </main>

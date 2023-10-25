@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
@@ -9,16 +11,32 @@ module.exports = {
         'base': '700px'
       },
       colors: {
-        'primary': '#FF6363',
+        'primary': '#000000',
         'secondary': 'white',
         'background': '#FFFFFF',
-        'text-on-primary': '#FFFFFF',
-        'text-on-secondary': '#000000',
-        'text-on-background': '#000000',
+        'on-primary': '#FF4081',
+        'on-secondary': '#000000',
+        'on-background': '#000000',
         'accent': '#FF6363',
       }
     },
+    fontFamily: {
+      'sans':  ['OpenSans', 'sans-serif'],
+      'serif': ['OpenSans', 'serif'],
+      'mono': ['OpenSans', 'monospace'],
+    }
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addBase, theme }) {
+      addBase({
+        'h1': {
+          fontSize: theme('fontSize.2xl'),
+          fontWeight: theme('fontWeight.bold'),
+        },
+        'h2': { fontSize: theme('fontSize.xl') },
+        'h3': { fontSize: theme('fontSize.lg') },
+      })
+    })
+  ],
 }
 

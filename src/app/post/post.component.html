@@ -1,3 +1,7 @@
-<li class="list-none p-4 bg-red-200">
-  <h3> Post title </h3>
-</li>
+<article class="list-none p-4 shadow-md flex flex-col gap-2">
+  <h2 class="font-bold"> {{ post.title }} </h2>
+  <p>
+    {{ post.content }}
+  </p>
+</article>
+<app-comment-list [comments]="post.comments"></app-comment-list>
