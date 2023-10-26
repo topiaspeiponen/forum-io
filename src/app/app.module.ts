@@ -8,6 +8,8 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
 import { RouterModule, provideRouter, withComponentInputBinding } from '@angular/router';
 import { CommentListComponent } from './comment-list/comment-list.component';
+import { CreatePostModalComponent } from './create-post-modal/create-post-modal.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes = [
   { path: '', component: PostListComponent },
@@ -20,12 +22,14 @@ const appRoutes = [
     PostComponent,
     PostListComponent,
     PostListItemComponent,
-    CommentListComponent
+    CommentListComponent,
+    CreatePostModalComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [
     provideRouter(appRoutes, withComponentInputBinding())

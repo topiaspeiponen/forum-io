@@ -8,11 +8,10 @@ import { ApiService } from '../api.service';
 })
 export class PostListComponent {
   posts: Post[] = [];
+
   constructor(private apiService: ApiService) {
     this.apiService.getPosts().subscribe((data) => {
       this.posts = data;
     });
   }
-  
-
 }

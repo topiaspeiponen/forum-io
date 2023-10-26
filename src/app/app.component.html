@@ -1,15 +1,16 @@
-<header
-  class="mx-auto mt-10 mb-5 p-4 w-base bg-black
+<header class="px-4 xl:mx-auto mt-5 mb-5 py-4 w-full xl:w-base bg-black
   text-on-primary shadow-md rounded flex flex-row">
   <a routerLink="/">
     <h1>Forum.io</h1>
   </a>
   <span class="ml-auto">
-    <button class="bg-on-primary text-primary text-sm font-bold p-2 rounded">
+    <button type="button" (click)="openCreatePostModal()"
+      class="bg-on-primary text-primary text-sm font-bold p-2 rounded">
       Create new post
     </button>
   </span>
 </header>
-<main class="mx-auto w-base bg-secondary">
+<main class="px-2 xl:mx-auto mb-5 w-full xl:w-base bg-secondary">
   <router-outlet></router-outlet>
 </main>
+<app-create-post-modal [modalOpen]="createPostModalOpen" (closeModalEvent)="closeCreatePostModal()"></app-create-post-modal>

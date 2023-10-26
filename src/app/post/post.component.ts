@@ -8,6 +8,10 @@ import { ApiService } from '../api.service';
 })
 export class PostComponent {
   post: FullPost = {} as FullPost;
+  commentForm = {
+    creatorName: '',
+    content: '',
+  };
 
   @Input()
   set postId(postId: number) {
@@ -18,4 +22,23 @@ export class PostComponent {
   }
 
   constructor(private apiService: ApiService) {}
+
+  createComment() {
+    if (!this.commentForm.creatorName || !this.commentForm.content) return;
+
+    this.apiService.createComment({
+      postId: this.post.id,
+      creatorName: this.commentForm.creatorName,
+      content: this.commentForm.content,
+    }).subscribe((data) => {
+      const responseBody = data.body;
+      if (data.status == 201 && responseBody) {
+        this.commentForm = {
+          creatorName: '',
+          content: '',
+        };
+        this.post.comments.unshift(responseBody);
+      }
+    });
+  }
 }

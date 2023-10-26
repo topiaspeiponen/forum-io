@@ -2,7 +2,7 @@ export type Post = {
   id: number;
   title: string;
   content: string;
-  commentsCount: number;
+  comments: Comment[];
 }
 
 export type FullPost = Post & {

@@ -1,7 +1,22 @@
+<a class="flex flex-row gap-2 mb-4" routerLink="/">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+    <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+  </svg>
+  Back to all posts
+</a>
 <article class="list-none p-4 shadow-md flex flex-col gap-2">
   <h2 class="font-bold"> {{ post.title }} </h2>
   <p>
     {{ post.content }}
   </p>
 </article>
+<form class="flex flex-col p-4 shadow-md gap-2">
+  <input class="border p-1" name="creatorName" required minlength="4" [(ngModel)]="commentForm.creatorName" type="text"
+    placeholder="Name">
+  <textarea class="border p-1 h-15" name="content" [(ngModel)]="commentForm.content" type="text"
+    placeholder="Content"> </textarea>
+  <div>
+    <button class="bg-on-primary text-primary text-sm font-bold p-2 rounded" (click)="createComment()">Submit</button>
+  </div>
+</form>
 <app-comment-list [comments]="post.comments"></app-comment-list>

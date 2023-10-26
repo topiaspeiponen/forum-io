@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'forum-io';
+  createPostModalOpen = false;
+  
+  openCreatePostModal() {
+    console.log('openCreatePostModal');
+    this.createPostModalOpen = true;
+  }
+  closeCreatePostModal() {
+    this.createPostModalOpen = false;
+  }
 }
