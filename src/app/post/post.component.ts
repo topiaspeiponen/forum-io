@@ -16,7 +16,6 @@ export class PostComponent {
   @Input()
   set postId(postId: number) {
     this.apiService.getPostById(postId).subscribe((data) => {
-      console.log(data);
       this.post = data;
     });
   }

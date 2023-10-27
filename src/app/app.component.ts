@@ -10,7 +10,6 @@ export class AppComponent {
   createPostModalOpen = false;
   
   openCreatePostModal() {
-    console.log('openCreatePostModal');
     this.createPostModalOpen = true;
   }
   closeCreatePostModal() {
