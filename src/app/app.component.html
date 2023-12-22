@@ -1,19 +1,16 @@
-<div class="text-sm text-center mt-2">
-  Checkout the repository at <a class="text-on-primary" href="https://github.com/topiaspeiponen/forum-io" target="_blank">(GitHub)</a>
+<div class="text-sm text-center text-on-background mt-2">
+  Checkout the repository at <a class="text-primary" href="https://github.com/topiaspeiponen/forum-io" target="_blank">(GitHub)</a>
 </div>
-<header class="px-4 xl:mx-auto mt-2 mb-5 py-4 w-full xl:w-base bg-black
-  text-on-primary shadow-md rounded flex flex-row">
+<header class="px-4 xl:mx-auto mt-2 mb-5 py-4 w-full xl:w-base bg-secondary-container
+  text-on-primary-container shadow-md rounded flex flex-row">
   <a routerLink="/">
     <h1>Forum.io</h1>
   </a>
   <span class="ml-auto">
-    <button type="button" (click)="openCreatePostModal()"
-      class="bg-on-primary text-primary text-sm font-bold p-2 rounded">
-      Create new post
-    </button>
+    <app-button [text]="'Create new post'" [onClick]="openCreatePostModal" [variant]="'primary'"></app-button>
   </span>
 </header>
-<main class="px-2 xl:mx-auto mb-5 w-full xl:w-base bg-secondary">
+<main class="px-2 xl:mx-auto mb-5 w-full xl:w-base">
   <router-outlet></router-outlet>
 </main>
 <app-create-post-modal [modalOpen]="createPostModalOpen" (closeModalEvent)="closeCreatePostModal()"></app-create-post-modal>

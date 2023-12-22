@@ -1,0 +1,10 @@
+<button type="button" (click)="onClick()"
+  class="text-sm font-bold px-4 py-2 rounded transition ease-in-out delay-50"
+  [ngClass]="{
+    'bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary': variant === 'primary',
+    'bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary': variant === 'secondary',
+    'bg-accent-container hover:bg-accent text-on-accent-container hover:text-on-accent': variant === 'accent',
+  }"
+  >
+  {{ text }}
+</button>

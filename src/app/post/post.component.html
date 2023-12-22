@@ -4,19 +4,19 @@
   </svg>
   Back to all posts
 </a>
-<article class="list-none p-4 shadow-md flex flex-col gap-2">
+<article class="list-none p-4 shadow-md flex flex-col gap-2 bg-secondary-container">
   <h2 class="font-bold"> {{ post.title }} </h2>
   <p>
     {{ post.content }}
   </p>
 </article>
-<form class="flex flex-col p-4 shadow-md gap-2">
+<form class="flex flex-col p-4 mt-4 shadow-md gap-2 bg-secondary-container">
   <input class="border p-1" name="creatorName" required minlength="4" [(ngModel)]="commentForm.creatorName" type="text"
     placeholder="Name">
   <textarea class="border p-1 h-15" name="content" [(ngModel)]="commentForm.content" type="text"
     placeholder="Content"> </textarea>
   <div>
-    <button class="bg-on-primary text-primary text-sm font-bold p-2 rounded" (click)="createComment()">Submit</button>
+    <app-button [text]="'Submit'" [onClick]="createComment" [variant]="'primary'"></app-button>
   </div>
 </form>
 <app-comment-list [comments]="post.comments"></app-comment-list>

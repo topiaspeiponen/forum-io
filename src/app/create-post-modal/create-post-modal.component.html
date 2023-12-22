@@ -1,11 +1,11 @@
-<dialog *ngIf="modalOpen" class="block w-full xl:w-[400px] xl:h-auto fixed top-1/4 p-4 p-4 shadow-md z-10">
-  <form (ngSubmit)="createPost()" class="flex flex-col gap-2">
+<dialog *ngIf="modalOpen" class="block bg-secondary-container w-full xl:w-[400px] xl:h-auto fixed top-1/4 p-4 p-8 shadow-md z-10 rounded-4">
+  <form (ngSubmit)="createPost()" class="flex flex-col gap-4">
     <input class="border p-1" name="creatorName" [(ngModel)]="creatorName" type="text" placeholder="Your name">
     <input class="border p-1" name="title" [(ngModel)]="title" type="text" placeholder="Title">
     <textarea class="border p-1" name="content" [(ngModel)]="content" type="text" placeholder="Content"></textarea>
     <div class="flex flex-row gap-4">
-      <button class="bg-on-primary text-primary text-sm font-bold p-2 rounded" (click)="createPost()">Submit</button>
-      <button class="bg-primary text-on-primary text-sm font-bold p-2 rounded" type="button" (click)="closeModal()">Close</button>
+      <app-button [text]="'Submit'" [onClick]="createPost" [variant]="'primary'"></app-button>
+      <app-button [text]="'Close'" [onClick]="closeModal" [variant]="'accent'"></app-button>
     </div>
   </form>
 </dialog>

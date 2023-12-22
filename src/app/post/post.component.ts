@@ -22,7 +22,7 @@ export class PostComponent {
 
   constructor(private apiService: ApiService) {}
 
-  createComment() {
+  createComment = () => {
     if (!this.commentForm.creatorName || !this.commentForm.content) return;
 
     this.apiService.createComment({

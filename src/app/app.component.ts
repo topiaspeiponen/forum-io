@@ -9,10 +9,10 @@ export class AppComponent {
   title = 'forum-io';
   createPostModalOpen = false;
   
-  openCreatePostModal() {
+  openCreatePostModal = () => {
     this.createPostModalOpen = true;
   }
-  closeCreatePostModal() {
+  closeCreatePostModal = () => {
     this.createPostModalOpen = false;
   }
 }

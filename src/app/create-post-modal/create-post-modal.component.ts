@@ -18,11 +18,11 @@ export class CreatePostModalComponent {
   constructor(private apiService: ApiService, private router: Router) {
   }
   
-  closeModal() {
+  closeModal = () => {
     this.closeModalEvent.emit();
   }
 
-  createPost() {
+  createPost = () => {
     if (!this.title || !this.content || !this.creatorName) return;
     this.apiService.createPost({title: this.title, content: this.content}).subscribe((response) => {
       if (response.status == 201) {

@@ -10,6 +10,7 @@ import { RouterModule, provideRouter, withComponentInputBinding } from '@angular
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { CreatePostModalComponent } from './create-post-modal/create-post-modal.component';
 import { FormsModule } from '@angular/forms';
+import { ButtonComponent } from './button/button.component';
 
 const appRoutes = [
   { path: '', component: PostListComponent },
@@ -23,17 +24,18 @@ const appRoutes = [
     PostListComponent,
     PostListItemComponent,
     CommentListComponent,
-    CreatePostModalComponent
+    CreatePostModalComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
   ],
   providers: [
     provideRouter(appRoutes, withComponentInputBinding())
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
